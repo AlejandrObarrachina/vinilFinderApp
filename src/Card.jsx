@@ -7,7 +7,7 @@ const Card = (props) => {
         <div className="card-wrapper">
             <div className="title">
                 <img className="logo" src={logof1} alt="logo f1" />
-                <h2>{props.value}</h2>
+                <h2>{props.track}</h2>
             </div>
             <p>RACE: {props.time}</p>
             <p>{props.day}</p>

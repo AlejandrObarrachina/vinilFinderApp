@@ -1,19 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import "./App.scss";
+import { getAllTracks } from "./service/api";
+// import useApi from "./service/api";
 
 // generación de componente
 
-const App = () => {
+function App() {
+    const [trackList, setTrack] = useState([]);
+    useEffect(() => {
+        getAllTracks().then((data) => setTrack(data.gp));
+    }, []);
+    // const getTracks = () => {
+    //     getAllTracks().then((data) => data.gp);
+    // };
+
     return (
         <div className="body-wrapper">
-            <Card track={"Sakhir"} time={"16:00"} day={"20/04"} />
-            <Card />
-            <Card />
-            <Card />
+            {trackList &&
+                trackList.map((track) => {
+                    return (
+                        <Card
+                            track={track.track}
+                            time={track.time}
+                            day={track.day}
+                        />
+                    );
+                })}
         </div>
     );
-};
+}
 
 export default App;
 // Exports
