@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.scss";
 
-const Carrousel = () => {
+const Carrousel = (props) => {
     
     return (
         
     <div className="carrousel-mas-recientes">
-        <h3></h3>
+        <h3> { props.name } </h3>
         <div className="carrousel-container">
             <div className="vinil-card-carrousel">
                 <a href="#">

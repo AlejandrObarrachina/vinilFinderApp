@@ -10,13 +10,14 @@ import Carrousel from "./Carrousel";
 
 function App() {
    
-
+    const carrouselNameRecientes = "Más recientes";
+    const carrouselNameVendedoresTop = "De nuestros mejores vendedores";
     return (
         <div className="body-wrapper">
             <Header/>
             <Buscador/>
-            <Carrousel/>
-            <Carrousel/>
+            <Carrousel name= { carrouselNameRecientes } />
+            <Carrousel name= { carrouselNameVendedoresTop } />
 
             
         </div>
